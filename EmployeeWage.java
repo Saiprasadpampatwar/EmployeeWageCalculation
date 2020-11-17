@@ -3,12 +3,16 @@ public static final int Is_part_time = 1;
 public static final int Is_present = 2;
 public static final int emp_rate_per_hour = 20;
 public static final int Num_of_working_days = 20;
+public static final int Max_hrs_in_month = 100;
 public static void main(String [] args){
 int empHrs = 0;
 int empWage = 0;
 int totalEmpWage = 0;
-for(int day = 0 ; day < Num_of_working_days ; day++)
+int totalWorkingDays = 0;
+int totalEmpHrs = 0;
+while(totalEmpHrs<=Max_hrs_in_month && totalWorkingDays < Num_of_working_days)
 {
+totalWorkingDays++;
 int empCheck = (int) Math.floor(Math.random() * 10) % 3;
 switch (empCheck)
 {
@@ -21,10 +25,10 @@ break;
 default:
 empHrs = 0;
 }
-empWage = empHrs * emp_rate_per_hour;
-totalEmpWage+=empWage;
-System.out.println("Emp Wage: "+empWage);
+totalEmpHrs+=empHrs;
+System.out.println("Day#: "+ totalWorkingDays + "Emp Hr: " + empHrs);
 }
-System.out.println("Total Emp Wage: " + totalEmpWage);
+totalEmpWage = totalEmpHrs * emp_rate_per_hour;
+System.out.println("Total Emp Wage: "+totalEmpWage);
 }
 }
