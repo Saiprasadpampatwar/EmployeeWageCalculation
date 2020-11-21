@@ -4,8 +4,8 @@ public class EmployeeWage {
 	public static final int Employee_present = 1;
 	public static final int Employee_absent = 0;
 	public static final int Employee_part_time = 2;
-	public static final int wage_per_hour = 20;
-	public static final int hours_in_a_day = 8;
+	public static final int Wage_per_hour = 20;
+	public static final int Hours_in_a_day = 8;
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
