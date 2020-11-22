@@ -20,6 +20,7 @@ public class EmployeeWage {
 			CompanyEmpWage e = new CompanyEmpWage(name, workingDays, wagePerHour, workingHrsInDay);
 			double montlyWage = e.CalculateEmpWage();
 			System.out.println(name + "'s Monthly Wage is : "+ montlyWage);
+			DifferentCompanies[i] = e;
 		}
 	
 		
