@@ -1,67 +1,28 @@
 import java.util.Scanner;
 
 public class EmployeeWage {
-	public static final int Employee_present = 1;
-	public static final int Employee_absent = 0;
-	public static final int Employee_part_time = 2;
-	String nameOfCompany;
-	int no_of_working_days;
-	int wage_per_hour;
-	int hours_in_a_day;
-	public static Scanner sc = new Scanner(System.in);
 	
-	public double CalculateEmpWage() {
-		double total_monthly_wage;
-		int total_emp_hrs = 0;
-		double total_working_days = 0;
-		System.out.println("Hello Employee");
-		while(total_working_days<no_of_working_days)
-		{
-		int emp_hrs = 0;
-		double days = 0;
-		int employee_presence = (int) (Math.floor(Math.random() * 3));
-		if (employee_presence == Employee_present) {
-			emp_hrs = hours_in_a_day;
-			days = 1;
-		}
-		else if (employee_presence == Employee_part_time)
-		{
-			emp_hrs = hours_in_a_day/2;
-			days = 0.5 ;
-		}
-		else {
-			emp_hrs = 0;
-			days = 0;
-		}
-		total_emp_hrs+=emp_hrs;
-		total_working_days+=days;
-		if(total_emp_hrs>100 ) {
-			total_emp_hrs=100;
-		}
-		if (total_working_days>20) {
-			total_working_days=20;
-		}
-		}
-		System.out.println("No. of Days: "+total_working_days);
-		System.out.println("No. of working hrs: "+total_emp_hrs);
-		total_monthly_wage = total_emp_hrs * wage_per_hour;
-		return total_monthly_wage;
-
-	}
-
+	public static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		EmployeeWage e1 = new EmployeeWage();
-		System.out.println("Enter the name of company");
-		e1.nameOfCompany = sc.next();
-		System.out.println("Enter the no of working days");
-		e1.no_of_working_days = sc.nextInt();
-		System.out.println("Enter the wage per hour");
-		e1.wage_per_hour = sc.nextInt();
-		System.out.println("Enter hours in a day");
-		e1.hours_in_a_day = sc.nextInt();
-		double totalWage = e1.CalculateEmpWage();
-		System.out.println("Monthly Income of Employee : "+totalWage);
+		System.out.println("Enter how many comanies do you want to enter:");
+		int noOfCompany = sc.nextInt();
+		CompanyEmpWage [] DifferentCompanies = new CompanyEmpWage[noOfCompany];
+		for (int i = 0; i < DifferentCompanies.length; i++) {
+			System.out.println("Enter Name of Comany:");
+			String name = sc.next();
+			System.out.println("Enter no of working days:");
+			int workingDays = sc.nextInt();
+			System.out.println("Enter wage per hour");
+			int wagePerHour = sc.nextInt();
+			System.out.println("Enter Working Hrs in a day:");
+			int workingHrsInDay = sc.nextInt();
+			CompanyEmpWage e = new CompanyEmpWage(name, workingDays, wagePerHour, workingHrsInDay);
+			double montlyWage = e.CalculateEmpWage();
+			System.out.println(name + "'s Monthly Wage is : "+ montlyWage);
+		}
+	
+		
 
 	}
 }
