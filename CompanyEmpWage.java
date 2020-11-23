@@ -8,6 +8,7 @@ public class CompanyEmpWage implements ComputeWageInterface{
 	int no_of_working_days;
 	int wage_per_hour;
 	int hours_in_a_day;
+	double dailyWage;
 	double totalMonthlyWage;
 	
 	public CompanyEmpWage(String nameOfCompany, int no_of_working_days, int wage_per_hour, int hours_in_a_day) {
@@ -50,6 +51,7 @@ public class CompanyEmpWage implements ComputeWageInterface{
 		}
 		//System.out.println("No. of Days: "+total_working_days);
 		//System.out.println("No. of working hrs: "+total_emp_hrs);
+		dailyWage = wage_per_hour*hours_in_a_day;
 		total_monthly_wage = total_emp_hrs * wage_per_hour;
 		return total_monthly_wage;
 
