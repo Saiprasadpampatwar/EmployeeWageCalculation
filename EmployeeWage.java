@@ -24,7 +24,9 @@ public class EmployeeWage {
 				int workingHrsInDay = sc.nextInt();
 				CompanyEmpWage e = new CompanyEmpWage(name, workingDays, wagePerHour, workingHrsInDay);
 				double montlyWage = e.CalculateEmpWage();
+				System.out.println(name + "'s Daily Wage is : "+ e.dailyWage);
 				System.out.println(name + "'s Monthly Wage is : "+ montlyWage);
+				
 				DifferentCompanies.add(e);
 				select = 1;
 				break;
