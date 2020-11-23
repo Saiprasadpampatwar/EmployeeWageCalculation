@@ -36,6 +36,8 @@ public class EmployeeWage {
 				break;
 			}
 		}
+		if(DifferentCompanies.size()!=0)
+		{
 		System.out.println("Enter the company name which total wage do you want to see:");
 		String name = sc.next();
 		for(int i = 0; i < DifferentCompanies.size(); i++)
@@ -45,7 +47,7 @@ public class EmployeeWage {
 				System.out.println("Toatl Wage of "+name+" is "+DifferentCompanies.get(i).totalMonthlyWage);
 			}
 		}
-
+		}
 	}
 }
 	
