@@ -54,6 +54,7 @@ public class CompanyEmpWage implements ComputeWageInterface{
 		//dailyWage = wage_per_hour*hours_in_a_day;
 		dailyWage = wage_per_hour*hours_in_a_day;
 		total_monthly_wage = total_emp_hrs * wage_per_hour;
+		totalMonthlyWage = total_monthly_wage;
 		return total_monthly_wage;
 
 	}

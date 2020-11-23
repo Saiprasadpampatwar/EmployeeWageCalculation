@@ -33,7 +33,16 @@ public class EmployeeWage {
 				select = 0;
 				break;
 			}
-		}		
+		}
+		System.out.println("Enter the company name which total wage do you want to see:");
+		String name = sc.next();
+		for(int i = 0; i < DifferentCompanies.size(); i++)
+		{
+			if(DifferentCompanies.get(i).nameOfCompany.equals(name))
+			{
+				System.out.println("Toatl Wage of "+name+" is "+DifferentCompanies.get(i).totalMonthlyWage);
+			}
+		}
 
 	}
 }
