@@ -1,5 +1,5 @@
 
-public class CompanyEmpWage {
+public class CompanyEmpWage implements ComputeWageInterface{
 	public static final int Employee_present = 1;
 	public static final int Employee_absent = 0;
 	public static final int Employee_part_time = 2;
