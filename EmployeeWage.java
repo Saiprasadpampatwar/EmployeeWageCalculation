@@ -1,9 +1,10 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class EmployeeWage {
-	public static final int Employee_present = 1;
-	public static final int Employee_absent = 0;
-	public static final int Employee_part_time = 2;
+	public static final int EMPLOYEE_PRESENT = 1;
+	public static final int EMPLOYEE_ABSENT = 0;
+	public static final int EMPLOYEE_PART_TIME = 2;
 	String nameOfCompany;
 	int no_of_working_days;
 	int wage_per_hour;
@@ -20,11 +21,11 @@ public class EmployeeWage {
 		int emp_hrs = 0;
 		double days = 0;
 		int employee_presence = (int) (Math.floor(Math.random() * 3));
-		if (employee_presence == Employee_present) {
+		if (employee_presence == EMPLOYEE_PRESENT) {
 			emp_hrs = hours_in_a_day;
 			days = 1;
 		}
-		else if (employee_presence == Employee_part_time)
+		else if (employee_presence == EMPLOYEE_PART_TIME)
 		{
 			emp_hrs = hours_in_a_day/2;
 			days = 0.5 ;
@@ -51,19 +52,34 @@ public class EmployeeWage {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		EmployeeWage e1 = new EmployeeWage();
-		System.out.println("Enter the name of company");
-		e1.nameOfCompany = sc.next();
-		System.out.println("Enter the no of working days");
-		e1.no_of_working_days = sc.nextInt();
-		System.out.println("Enter the wage per hour");
-		e1.wage_per_hour = sc.nextInt();
-		System.out.println("Enter hours in a day");
-		e1.hours_in_a_day = sc.nextInt();
-		double totalWage = e1.CalculateEmpWage();
-		System.out.println("Monthly Income of Employee : "+totalWage);
-
+		ArrayList<EmployeeWage> Companies = new ArrayList<>();
+		int next = 1;
+		while(next == 1) {
+			System.out.println("Choose\n 1. Add a Comany\n 2.Exit");
+			int option = sc.nextInt();
+			switch(option) {
+			case 1:
+				EmployeeWage e1 = new EmployeeWage();
+				System.out.println("Enter the name of company");
+				e1.nameOfCompany = sc.next();
+				System.out.println("Enter the no of working days");
+				e1.no_of_working_days = sc.nextInt();
+				System.out.println("Enter the wage per hour");
+				e1.wage_per_hour = sc.nextInt();
+				System.out.println("Enter hours in a day");
+				e1.hours_in_a_day = sc.nextInt();
+				double totalWage = e1.CalculateEmpWage();
+				Companies.add(e1);
+				System.out.println("Monthly Income of Employee : "+totalWage);
+				next = 1;
+				break;
+			case 2:
+				System.out.println("Thank You");
+				next = 0;
+				break;
+			}
+		
 	}
 }
 	
-
+}
